@@ -38,6 +38,10 @@
 
 顺便撤了一个升级原因：安全，效率，简化书写（Vector被淘汰原因，可能淘汰有歧义。）
 
+ # 2018.8.28 JavaSE-day16
+  4、16.04_集合框架(LinkedList的特有功能)
+
+今天学的是链表LinkedList，LinkedList底层是链表，所以查询慢，但是相对的增删方便，因此有addFirst，addLast，removeFirst，removeLast等方法；线程方面不安全，所以效率高（一般不安全的好处）。
 
   
   
