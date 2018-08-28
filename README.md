@@ -43,6 +43,24 @@
 
 今天学的是链表LinkedList，LinkedList底层是链表，所以查询慢，但是相对的增删方便，因此有addFirst，addLast，removeFirst，removeLast等方法；线程方面不安全，所以效率高（一般不安全的好处）。
 
+代码演示：
+ ``` HTML
+LinkedList link=new LinkedList();
+
+        link.add("hello");
+        link.add("world");
+        link.addLast("android");
+        link.add("java");
+
+        link.addFirst("javaee");
+        link.addLast("android");
+        System.out.println(link.getFirst());
+        System.out.println(link.getLast());
+        System.out.println(link);
+        System.out.println(link.removeFirst());
+        System.out.println(link.removeLast());
+```
+
   
   
   
