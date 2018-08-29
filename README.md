@@ -60,9 +60,33 @@ LinkedList link=new LinkedList();
         System.out.println(link.removeFirst());
         System.out.println(link.removeLast());
 ```
+ # 2018.8.29 JavaSE-day16
+ 
+ 5、16.05_集合框架(去除ArrayList集合中的重复字符串元素案例1)
+ 
+ 今天是个练习题。一般步骤，创建集合对象，添加元素，创建新集合，遍历旧的集合，添加元素到新集合，同时判断是否重复
+  ``` HTML
+      ArrayList array=new ArrayList();
 
-  
-  
+        array.add("hello");
+        array.add("world");
+        array.add("java");
+        array.add("world");
+
+        ArrayList newArray=new ArrayList();
+
+        Iterator it=array.iterator();
+        while (it.hasNext()){
+            String s= (String) it.next();
+            if (!newArray.contains(s)){
+                newArray.add(s);
+            }
+        }
+        for (int x=0;x<newArray.size();x++){
+            String s= (String) newArray.get(x);
+            System.out.println(s);
+        }
+```
   
   
   
