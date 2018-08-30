@@ -87,7 +87,35 @@ LinkedList link=new LinkedList();
             System.out.println(s);
         }
 ```
-  
+# 2018.8.30 JavaSE-day16
+
+7、16.07_集合框架(去除ArrayList集合中的重复字符串元素案例2)
+
+这次是要求基本相同，不同就是不创建新集合。原理是基于选择排序思想。拿0，1,2...索引
+
+ ``` HTML
+       ArrayList array=new ArrayList();
+
+        array.add("hello");
+        array.add("world");
+        array.add("java");
+        array.add("world");
+
+        for (int x=0;x<array.size()-1;x++){
+            for (int y=x+1;y<array.size();y++){
+                if (array.get(x).equals(array.get(y))){
+                    array.remove(y); //remove之后长度会变短
+                    y--;//所以要y--
+                }
+            }
+        }
+
+        Iterator it=array.iterator();
+        while (it.hasNext()){
+            String s= (String) it.next();
+            System.out.println(s);
+        }
+```
   
   
   
