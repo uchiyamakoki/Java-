@@ -116,7 +116,102 @@ LinkedList link=new LinkedList();
             System.out.println(s);
         }
 ```
-  
+# 2018.8.30 JavaSE-day16
+
+8、16.08_集合框架(去除ArrayList集合中的重复自定义对象元素案例)
+
+这里主要是contains(s)方法，主要是indexof→equals（），这个方法在s是实体类时，实体类没有重写，用的是Object的，所以需要在实体类里重写equals（）。
+
+ ``` HTML
+      ArrayList array=new ArrayList();
+
+        Student s1=new Student("余一",27);
+        Student s2=new Student("沈宁",40);
+        Student s3=new Student("王珞蓉",35);
+        Student s4=new Student("郑紫悦",18);
+        Student s5=new Student("徐榕霞",16);
+        Student s6=new Student("余一",27);
+
+        array.add(s1);
+        array.add(s2);
+        array.add(s3);
+        array.add(s4);
+        array.add(s5);
+        array.add(s6);
+
+
+        ArrayList newArray=new ArrayList();
+        Iterator it=array.iterator();
+        while (it.hasNext()){
+            Student s= (Student) it.next();
+            if (!newArray.contains(s)){
+                newArray.add(s);
+            }
+        }
+        for (int x=0;x<newArray.size();x++){
+            Student s= (Student) newArray.get(x);
+            System.out.println(s.getName()+s.getAge());
+        }
+```
+
+9、16.09_集合框架(用LinkedList实现栈结构的集合代码)
+
+栈特点，先进后出
+
+``` HTML
+     LinkedList link=new LinkedList();
+        link.addFirst("hello");
+        link.addFirst("world");
+        link.addFirst("java");
+
+        Iterator it=link.iterator();
+        while (it.hasNext()){
+            String s= (String) it.next();
+            System.out.println(s);
+        }
+```
+
+10、16.10_集合框架(用LinkedList模拟栈数据结构的集合并测试案例)
+
+思路就是构造方法时其实是新建了一个LinkedL，然后就能在新建功能时使用LinkedList
+
+而get时，使用removeFirst()，返回(getFirst的功能)并remove。所以当然也要判断一下为空。
+
+``` HTML
+  MyStack ms=new MyStack();
+
+        ms.add("hello");
+        ms.add("world");
+        ms.add("java");
+
+
+
+        while (!ms.isEmpty()){
+            System.out.println(ms.get());
+        }
+
+  public class MyStack {
+
+    private LinkedList link;
+
+    public MyStack(){
+        link=new LinkedList();
+    }
+
+    public void add(Object obj){
+        link.addFirst(obj);
+    }
+
+    public Object get(){
+      // return link.getFirst();
+        return link.removeFirst();
+    }
+
+    public boolean isEmpty(){
+        return link.isEmpty();
+    }
+}
+```
   
   
   
