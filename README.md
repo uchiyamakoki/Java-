@@ -223,6 +223,17 @@ LinkedList link=new LinkedList();
 
 好处：把运行时问题提前到了编译时间；避免了强制类型转换 就之前那种（String）it.next（）这样的；优化了程序设计，解决了黄色警告线
   
+ # 2018.9.19 JavaSE-day17
+ 
+ 16、17.16_集合框架(LinkedHashSet的概述和使用)
+ 
+ LinkedHashSet中哈希表保证元素唯一性，链表保证元素有序.
+ 
+ 17、17.17_集合框架(TreeSet存储Integer类型的元素并遍历)
+ TreeSet特点，能够对元素进行某种规则进行排序
+ 
+ 1.自然排序  2.比较器排序
+ 
  
  
 
